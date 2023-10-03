@@ -12,6 +12,7 @@
 /build
 
 # misc
+.env
 .DS_Store
 .env.local
 .env.development.local
@@ -21,3 +22,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+user - create an account, have orders
+order - see orders, create an order, 
