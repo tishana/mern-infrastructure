@@ -27,3 +27,20 @@ export async function signUp(userData) {
     // If there's a token, return the user in the payload, otherwise return null
     return token ? JSON.parse(atob(token.split('.')[1])).user : null
     }
+
+    export async function login(credentials) {
+        const token = await usersAPI.login(credentials)
+      // Persist the token to localStorage
+      localStorage.setItem('token', token)
+      return getUser()
+      }
+
+    export function logOut() {
+        localStorage.removeItem('token')
+    }
+
+    export function getTime() {
+        const token = getToken()
+        // If there's a token, return the user in the payload, otherwise return null
+        return token ? JSON.parse(atob(token.split('.')[1])).exp : null
+        }
